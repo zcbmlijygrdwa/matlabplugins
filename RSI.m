@@ -40,6 +40,10 @@ state.SMMA_state_U = SMMA(state.SMMA_state_U,state.U);
 state.SMMA_state_D = SMMA(state.SMMA_state_D,state.D);
 %SMMA(state.SMMA_state_D,state.D);
 
+if(state.SMMA_state_D.result==0)
+state.SMMA_state_D.result = 0.0000000000001;
+end
+
 state.RS = state.SMMA_state_U.result/state.SMMA_state_D.result;
 
 
